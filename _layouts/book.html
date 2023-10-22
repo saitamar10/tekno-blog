@@ -5,7 +5,7 @@ layout: base
 <div class="row yue">
     <div class="col-md-12 aside3-title">
         <h1 id="#identifier">{{ page.title }}</h1>
-        <div class="aside3-date">{{ page.date | date:"%Y年%m月%d日" }}</div>
+        <div class="aside3-date">{{ page.date | date:"%Y%m%d" }}</div>
     </div>
     <hr/>
   <div class="col-md-12 aside3-content">
@@ -27,25 +27,25 @@ layout: base
                 <div class="col-md-8 col-xs-12">
                   <table class="table table-bordered">
                     <tbody>
-                      <tr><td style="width:80px;">作者</td><td>{{ book.author }}</td></tr>
-                      <tr><td>出版商</td><td>{{ book.publisher }}</td></tr>
-                      <tr><td>语言</td><td>{{ book.language }}</td></tr>
+                      <tr><td style="width:80px;">Yazar</td><td>{{ book.author }}</td></tr>
+                      <tr><td>Yayıncı</td><td>{{ book.publisher }}</td></tr>
+                      <tr><td>çok dillilik</td><td>{{ book.language }}</td></tr>
                       <tr>
-                        <td>链接</td><td>
-                        <a href="{{ book.link }}" title="{{ book.link }}">图书链接</a>
+                        <td>bağlantı (bir web sitesinde)</td><td>
+                        <a href="{{ book.link }}" title="{{ book.link }}">Kitap Bağlantıları</a>
                       </td></tr>
                       <tr>
-                        <td>状态</td>
+                        <td>durum tespiti</td>
                         <td>
-                          {% if book.status == '已读' %}
+                          {% if book.status == 'okuyun' %}
                             <span class="label label-success">{{ book.status }}</span>
-                          {% elsif book.status == '在读' %}
+                          {% elsif book.status == 'okulda olmak' %}
                             <span class="label label-info">{{ book.status }}</span>
-                          {% elsif book.status == '未读' %}
+                          {% elsif book.status == 'okunmamış' %}
                             <span class="label label-default">{{ book.status }}</span>
                           {% endif %}
                         </td></tr>
-                      <tr><td>评论</td><td>{{ book.description }}</td></tr>
+                      <tr><td>yorumlar</td><td>{{ book.description }}</td></tr>
                     </tbody>
                   </table>
                 </div>
